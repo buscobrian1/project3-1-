@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Song</title>
+
+    <link rel="stylesheet" href="../styles/inputInfoStyles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Add New Record</h1>
+    <form method="POST" action="/addsong">
+      <label for="SongName">Song Name: </label>
+      <input type="text" name="SongName" />
+
+      <label for="ArtistID">Artist: </label>
+      <input type="text" name="ArtistID" />
+
+      <label for="YearReleased">Year Released: </label>
+      <input type="text" name="YearReleased" />
+
+      <div class="button-container">
+        <button type="submit">Add Song</button>
+      </div>
+    </form>
+  </body>
+</html>

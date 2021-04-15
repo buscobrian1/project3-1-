@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Song</title>
+
+    <link rel="stylesheet" href="../styles/inputInfoStyles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <% console.log(aSongs) %>
+    <h1>Edit Record</h1>
+    <form method="POST" action="/edit/<%=aSongs[0].SongID %>">
+      <label for="SongName">Song Name: </label>
+      <input type="text" name="SongName" value="<%=aSongs[0].SongName %>" />
+
+      <label for="ArtistID">Artist: </label>
+      <input type="text" name="ArtistID" value="<%=aSongs[0].ArtistID %>" />
+
+      <label for="YearReleased">YearReleased: </label>
+      <input
+        type="text"
+        name="YearReleased"
+        value="<%=aSongs[0].YearReleased %>"
+      />
+
+      <div class="button-container">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+    <form method="GET" action="/">
+      <div class="button-container">
+        <button type="submit">Cancel</button>
+      </div>
+    </form>
+  </body>
+</html>

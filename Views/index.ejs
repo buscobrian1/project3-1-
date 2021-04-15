@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songs</title>
+
+    <link rel="stylesheet" href="../styles/mainStyles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Music Library</h1>
+    <div class="table-container">
+      <div class="rTable">
+        <div class="rTableRow">
+          <div class="rTableHead">Delete</div>
+          <div class="rTableHead">Song ID</div>
+          <div class="rTableHead">Song Name</div>
+          <div class="rTableHead">Artist ID</div>
+          <div class="rTableHead">Year Released</div>
+          <div class="rTableHead">Edit</div>
+        </div>
+
+        <% console.log(aSongs); %> <% for (let iCount=0; iCount< aSongs.length;
+        iCount++){ %>
+        <div class="rTableRow">
+          <div class="rTableCell">
+            <form method="GET" action="/delete/<%= aSongs[iCount].SongID%>">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+
+          <div class="rTableCell"><%= aSongs[iCount].SongID %></div>
+
+          <div class="rTableCell">
+            <%= aSongs[iCount].SongName.toUpperCase() %>
+          </div>
+
+          <div class="rTableCell">
+            <%= aSongs[iCount].ArtistID.toUpperCase() %>
+          </div>
+
+          <div class="rTableCell"><%= aSongs[iCount].YearReleased %></div>
+
+          <div class="rTableCell">
+            <form method="GET" action="/edit/<%= aSongs[iCount].SongID%>">
+              <button type="submit">Edit</button>
+            </form>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <form method="=GET" action="/addsong">
+        <button type="submit" class="styled">Add New Record</button>
+      </form>
+      <br />
+      <form method="=GET" action="/reset">
+        <button type="submit" class="styled">Start Over</button>
+      </form>
+    </div>
+    <% console.log(aSongs); %>
+  </body>
+</html>
